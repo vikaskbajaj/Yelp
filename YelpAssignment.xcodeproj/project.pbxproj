@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A393211A19CF531000FF23C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A393211919CF531000FF23C2 /* main.m */; };
+		A393211D19CF531000FF23C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A393211C19CF531000FF23C2 /* AppDelegate.m */; };
+		A393212019CF531000FF23C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A393211F19CF531000FF23C2 /* ViewController.m */; };
+		A393212319CF531000FF23C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A393212119CF531000FF23C2 /* Main.storyboard */; };
+		A393212519CF531000FF23C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A393212419CF531000FF23C2 /* Images.xcassets */; };
+		A393212819CF531000FF23C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A393212619CF531000FF23C2 /* LaunchScreen.xib */; };
+		A393213419CF531000FF23C2 /* YelpAssignmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A393213319CF531000FF23C2 /* YelpAssignmentTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A393212E19CF531000FF23C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A393210C19CF531000FF23C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A393211319CF531000FF23C2;
+			remoteInfo = YelpAssignment;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A393211419CF531000FF23C2 /* YelpAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A393211819CF531000FF23C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A393211919CF531000FF23C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A393211B19CF531000FF23C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A393211C19CF531000FF23C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A393211E19CF531000FF23C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A393211F19CF531000FF23C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A393212219CF531000FF23C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A393212419CF531000FF23C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A393212719CF531000FF23C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A393212D19CF531000FF23C2 /* YelpAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YelpAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A393213219CF531000FF23C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A393213319CF531000FF23C2 /* YelpAssignmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YelpAssignmentTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A393211119CF531000FF23C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A393212A19CF531000FF23C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A393210B19CF531000FF23C2 = {
+			isa = PBXGroup;
+			children = (
+				A393211619CF531000FF23C2 /* YelpAssignment */,
+				A393213019CF531000FF23C2 /* YelpAssignmentTests */,
+				A393211519CF531000FF23C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A393211519CF531000FF23C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A393211419CF531000FF23C2 /* YelpAssignment.app */,
+				A393212D19CF531000FF23C2 /* YelpAssignmentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A393211619CF531000FF23C2 /* YelpAssignment */ = {
+			isa = PBXGroup;
+			children = (
+				A393211B19CF531000FF23C2 /* AppDelegate.h */,
+				A393211C19CF531000FF23C2 /* AppDelegate.m */,
+				A393211E19CF531000FF23C2 /* ViewController.h */,
+				A393211F19CF531000FF23C2 /* ViewController.m */,
+				A393212119CF531000FF23C2 /* Main.storyboard */,
+				A393212419CF531000FF23C2 /* Images.xcassets */,
+				A393212619CF531000FF23C2 /* LaunchScreen.xib */,
+				A393211719CF531000FF23C2 /* Supporting Files */,
+			);
+			path = YelpAssignment;
+			sourceTree = "<group>";
+		};
+		A393211719CF531000FF23C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A393211819CF531000FF23C2 /* Info.plist */,
+				A393211919CF531000FF23C2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A393213019CF531000FF23C2 /* YelpAssignmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				A393213319CF531000FF23C2 /* YelpAssignmentTests.m */,
+				A393213119CF531000FF23C2 /* Supporting Files */,
+			);
+			path = YelpAssignmentTests;
+			sourceTree = "<group>";
+		};
+		A393213119CF531000FF23C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A393213219CF531000FF23C2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A393211319CF531000FF23C2 /* YelpAssignment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A393213719CF531000FF23C2 /* Build configuration list for PBXNativeTarget "YelpAssignment" */;
+			buildPhases = (
+				A393211019CF531000FF23C2 /* Sources */,
+				A393211119CF531000FF23C2 /* Frameworks */,
+				A393211219CF531000FF23C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YelpAssignment;
+			productName = YelpAssignment;
+			productReference = A393211419CF531000FF23C2 /* YelpAssignment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A393212C19CF531000FF23C2 /* YelpAssignmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A393213A19CF531000FF23C2 /* Build configuration list for PBXNativeTarget "YelpAssignmentTests" */;
+			buildPhases = (
+				A393212919CF531000FF23C2 /* Sources */,
+				A393212A19CF531000FF23C2 /* Frameworks */,
+				A393212B19CF531000FF23C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A393212F19CF531000FF23C2 /* PBXTargetDependency */,
+			);
+			name = YelpAssignmentTests;
+			productName = YelpAssignmentTests;
+			productReference = A393212D19CF531000FF23C2 /* YelpAssignmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A393210C19CF531000FF23C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = codepath;
+				TargetAttributes = {
+					A393211319CF531000FF23C2 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					A393212C19CF531000FF23C2 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = A393211319CF531000FF23C2;
+					};
+				};
+			};
+			buildConfigurationList = A393210F19CF531000FF23C2 /* Build configuration list for PBXProject "YelpAssignment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A393210B19CF531000FF23C2;
+			productRefGroup = A393211519CF531000FF23C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A393211319CF531000FF23C2 /* YelpAssignment */,
+				A393212C19CF531000FF23C2 /* YelpAssignmentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A393211219CF531000FF23C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A393212319CF531000FF23C2 /* Main.storyboard in Resources */,
+				A393212819CF531000FF23C2 /* LaunchScreen.xib in Resources */,
+				A393212519CF531000FF23C2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A393212B19CF531000FF23C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A393211019CF531000FF23C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A393212019CF531000FF23C2 /* ViewController.m in Sources */,
+				A393211D19CF531000FF23C2 /* AppDelegate.m in Sources */,
+				A393211A19CF531000FF23C2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A393212919CF531000FF23C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A393213419CF531000FF23C2 /* YelpAssignmentTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A393212F19CF531000FF23C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A393211319CF531000FF23C2 /* YelpAssignment */;
+			targetProxy = A393212E19CF531000FF23C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A393212119CF531000FF23C2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A393212219CF531000FF23C2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A393212619CF531000FF23C2 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A393212719CF531000FF23C2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A393213519CF531000FF23C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A393213619CF531000FF23C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A393213819CF531000FF23C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YelpAssignment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A393213919CF531000FF23C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YelpAssignment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A393213B19CF531000FF23C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YelpAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YelpAssignment.app/YelpAssignment";
+			};
+			name = Debug;
+		};
+		A393213C19CF531000FF23C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YelpAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YelpAssignment.app/YelpAssignment";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A393210F19CF531000FF23C2 /* Build configuration list for PBXProject "YelpAssignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A393213519CF531000FF23C2 /* Debug */,
+				A393213619CF531000FF23C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A393213719CF531000FF23C2 /* Build configuration list for PBXNativeTarget "YelpAssignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A393213819CF531000FF23C2 /* Debug */,
+				A393213919CF531000FF23C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A393213A19CF531000FF23C2 /* Build configuration list for PBXNativeTarget "YelpAssignmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A393213B19CF531000FF23C2 /* Debug */,
+				A393213C19CF531000FF23C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A393210C19CF531000FF23C2 /* Project object */;
+}
