@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *distance;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantImage;
 @property (weak, nonatomic) IBOutlet UIImageView *ratings;
+@property (weak, nonatomic) IBOutlet UILabel *ratingsLabel;
 
 @end

@@ -26,7 +26,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 @property(strong, nonatomic) YelpClient *yelpClient;
 @property (strong, nonatomic) NSMutableArray *yelpResponse;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) Filters *filters;
+@property (strong, nonatomic) Filters *filters;
 
 @end
 
@@ -39,11 +39,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     }
     [self.yelpClient search:searchTerm withFilters:filters success:^(AFHTTPRequestOperation *operation, id response) {
         
-        //[self.yelpResponse removeAllObjects];
-        
         [self.yelpResponse addObjectsFromArray:[(NSDictionary *)response objectForKey:@"businesses"]];
-
-        //        self.yelpResponse = [ [(NSDictionary *)response objectForKey:@"businesses"] mutableCopy];
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
         
@@ -93,13 +89,14 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     
     cell.name.text = [NSString stringWithFormat:@"%@. %@", restaurantIndex, restaurantName];
     cell.address.text = [restaurant valueForKeyPath:@"location.display_address"][0];
+    cell.ratingsLabel.text = [NSString stringWithFormat:@"%@ reviews", restaurant[@"review_count"]];
     
     //Yelp colors
     cell.name.textColor = [UIColor colorFromHexString:@"#333"];
     cell.address.textColor = [UIColor colorFromHexString:@"#999999"];
     
     NSString *imageURL = restaurant[@"image_url"];
-    NSString *ratingsURL = restaurant[@"rating_img_url_small"];
+    NSString *ratingsURL = restaurant[@"rating_img_url"];
     
     [cell.restaurantImage setImageWithURL:[NSURL URLWithString: imageURL]];
     [cell.ratings setImageWithURL:[NSURL URLWithString: ratingsURL]];
@@ -112,7 +109,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"RestaurantCell" bundle:nil] forCellReuseIdentifier:@"RestaurantCell"];
     
@@ -164,6 +161,37 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
     [self presentViewController:navController animated:YES completion:nil];
     
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellID = @"RestaurantCell";
+    RestaurantCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[RestaurantCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    
+    NSDictionary *restaurant = self.yelpResponse[indexPath.row];
+    
+    NSString *restaurantIndex = [NSString stringWithFormat:@"%ld", (indexPath.row + 1)];
+    NSString *restaurantName = restaurant[@"name"];
+    
+    cell.name.text = [NSString stringWithFormat:@"%@. %@", restaurantIndex, restaurantName];
+    cell.address.text = [restaurant valueForKeyPath:@"location.display_address"][0];
+    cell.ratingsLabel.text = [NSString stringWithFormat:@"%@ reviews", restaurant[@"review_count"]];
+    
+    //Yelp colors
+    cell.name.textColor = [UIColor colorFromHexString:@"#333"];
+    cell.address.textColor = [UIColor colorFromHexString:@"#999999"];
+    
+    NSString *imageURL = restaurant[@"image_url"];
+    NSString *ratingsURL = restaurant[@"rating_img_url"];
+    
+    [cell.restaurantImage setImageWithURL:[NSURL URLWithString: imageURL]];
+    [cell.ratings setImageWithURL:[NSURL URLWithString: ratingsURL]];
+    
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *) cell forRowAtIndexPath:(NSIndexPath *)indexPath

@@ -29,8 +29,6 @@
     [mutualableFiltersDic setObject:@"San Francisco" forKey:@"location"];
     
     
-    NSLog(@"### Term %@ with ##################################### parameters are %@", term, filters);
-    
     return [self GET:@"search" parameters:[NSDictionary dictionaryWithDictionary:mutualableFiltersDic] success:success failure:failure];
 }
 
