@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -15,9 +16,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD1-s1-Laz">
-                        <rect key="frame" x="116" y="12" width="162" height="20"/>
+                        <rect key="frame" x="116" y="12" width="143" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="162" id="o79-HE-Kr4"/>
+                            <constraint firstAttribute="width" constant="143" id="o79-HE-Kr4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -75,7 +76,7 @@
                     <constraint firstItem="OSD-bE-bgu" firstAttribute="leading" secondItem="Mck-tY-4e5" secondAttribute="trailing" constant="8" id="Uny-hn-V8m"/>
                     <constraint firstItem="SD1-s1-Laz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="fa6-yH-DXU"/>
                     <constraint firstItem="mYn-hu-zSR" firstAttribute="top" secondItem="pTi-Iv-fSZ" secondAttribute="bottom" constant="6" id="hDH-xn-VmS"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="SD1-s1-Laz" secondAttribute="trailing" constant="34" id="iIM-t8-V6a"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SD1-s1-Laz" secondAttribute="trailing" constant="53" id="iIM-t8-V6a"/>
                     <constraint firstItem="pTi-Iv-fSZ" firstAttribute="leading" secondItem="Mck-tY-4e5" secondAttribute="trailing" constant="8" id="kkm-8s-rVb"/>
                     <constraint firstItem="Mck-tY-4e5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="oTM-Cb-AGM"/>
                     <constraint firstItem="Mck-tY-4e5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="rfd-EI-2Be"/>

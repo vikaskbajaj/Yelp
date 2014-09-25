@@ -39,8 +39,11 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     }
     [self.yelpClient search:searchTerm withFilters:filters success:^(AFHTTPRequestOperation *operation, id response) {
         
-        [self.yelpResponse removeAllObjects];
-        self.yelpResponse = [[(NSDictionary *)response objectForKey:@"businesses"] mutableCopy];
+        //[self.yelpResponse removeAllObjects];
+        
+        [self.yelpResponse addObjectsFromArray:[(NSDictionary *)response objectForKey:@"businesses"]];
+
+        //        self.yelpResponse = [ [(NSDictionary *)response objectForKey:@"businesses"] mutableCopy];
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
         
@@ -54,7 +57,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.filters = [Filters singletonObject];
-        
+        self.yelpResponse = [[NSMutableArray alloc] init];
         [self getBusinessesForSearchTerm:@"American" withFilters:[self.filters getLastSavedFilters]];
     }
     return self;
@@ -65,6 +68,8 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:searchFilters forKey:@"yelpFilters"];
     [userDefaults synchronize];
+    
+    [self.yelpResponse removeAllObjects];
     
     [self getBusinessesForSearchTerm:@"American" withFilters:searchFilters];
 }
@@ -127,8 +132,6 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     self.navigationController.navigationBar.tintColor =[UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorFromHexString:@"#c41200"];
     
-    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(onFilterButtonClicked:)];
-    
     // Filter button
     UIButton *filterButton = [Utils getStandardUIButtonWithTitle:@"Filter"];
     filterButton.frame=CGRectMake(0.0, 100.0, 70.0, 30.0);
@@ -137,7 +140,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     UIBarButtonItem *filterButtonItem = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
     
     self.navigationItem.leftBarButtonItem = filterButtonItem;
-
+    
     [self.tableView reloadData];
     
 }
@@ -150,7 +153,6 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [self.tableView reloadData];
 }
 
-
 - (void) onFilterButtonClicked: (id) sender {
     FiltersViewController *filterController = [[FiltersViewController alloc] initWithNibName:@"FiltersViewController" bundle:nil];
     filterController.delegate = self;
@@ -162,11 +164,14 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
     [self presentViewController:navController animated:YES completion:nil];
     
-    //UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    
-    //self.navigationItem.backBarButtonItem = cancelButton;
-    
-    //[self.navigationController pushViewController:filterController animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *) cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row == ([self.yelpResponse count] - 1))
+    {
+        [self getBusinessesForSearchTerm:@"American" withFilters:[self.filters getLastSavedFilters]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
