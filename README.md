@@ -14,6 +14,7 @@ Completed user stories:
  * [x] Required: Clicking on the "Search" button should dismiss the filters page and trigger the search w/ the new filter settings.
  
  * [x] Optional: Implemented a custom switch
+ * [x] Optional: Infinite scroll for restaurant results
   
 Walkthrough of all user stories:
 
