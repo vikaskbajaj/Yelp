@@ -16,6 +16,7 @@
 #import "Utils.h"
 #import "SVProgressHUD.h"
 
+
 NSString * const kYelpConsumerKey = @"vxKwwcR_NMQ7WaEiQBK_CA";
 NSString * const kYelpConsumerSecret = @"33QCvh5bIF5jIHR5klQr7RtBDhQ";
 NSString * const kYelpToken = @"uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV";
@@ -27,6 +28,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 @property (strong, nonatomic) NSMutableArray *yelpResponse;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) Filters *filters;
+@property (strong, nonatomic) NSString *term;
 
 @end
 
@@ -38,8 +40,8 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
         self.yelpClient = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
     }
     [self.yelpClient search:searchTerm withFilters:filters success:^(AFHTTPRequestOperation *operation, id response) {
-        
         [self.yelpResponse addObjectsFromArray:[(NSDictionary *)response objectForKey:@"businesses"]];
+        NSLog(@"Response received for search term %@ having count as %ld", searchTerm, self.yelpResponse.count);
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
         
@@ -53,8 +55,9 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.filters = [Filters singletonObject];
+        self.term = @"";
         self.yelpResponse = [[NSMutableArray alloc] init];
-        [self getBusinessesForSearchTerm:@"American" withFilters:[self.filters getLastSavedFilters]];
+        [self getBusinessesForSearchTerm:self.term withFilters:[self.filters getLastSavedFilters]];
     }
     return self;
 }
@@ -66,8 +69,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [userDefaults synchronize];
     
     [self.yelpResponse removeAllObjects];
-    
-    [self getBusinessesForSearchTerm:@"American" withFilters:searchFilters];
+    [self getBusinessesForSearchTerm:self.term withFilters:searchFilters];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -87,6 +89,8 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     NSString *restaurantIndex = [NSString stringWithFormat:@"%ld", (indexPath.row + 1)];
     NSString *restaurantName = restaurant[@"name"];
     
+    //NSLog(@"Distance value is %f", distanceInMeters);
+    
     cell.name.text = [NSString stringWithFormat:@"%@. %@", restaurantIndex, restaurantName];
     cell.address.text = [restaurant valueForKeyPath:@"location.display_address"][0];
     cell.ratingsLabel.text = [NSString stringWithFormat:@"%@ reviews", restaurant[@"review_count"]];
@@ -105,11 +109,14 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"RestaurantCell" bundle:nil] forCellReuseIdentifier:@"RestaurantCell"];
     
@@ -142,12 +149,10 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    [self.tableView reloadData];
-}
-          
--(void) viewDidAppear:(BOOL)animated {
-    [self.tableView reloadData];
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    self.term = searchBar.text;
+    [self.yelpResponse removeAllObjects];
+    [self getBusinessesForSearchTerm:self.term withFilters:[self.filters getLastSavedFilters]];
 }
 
 - (void) onFilterButtonClicked: (id) sender {
@@ -198,7 +203,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 {
     if(indexPath.row == ([self.yelpResponse count] - 1))
     {
-        [self getBusinessesForSearchTerm:@"American" withFilters:[self.filters getLastSavedFilters]];
+        [self getBusinessesForSearchTerm:self.term withFilters:[self.filters getLastSavedFilters]];
     }
 }
 
