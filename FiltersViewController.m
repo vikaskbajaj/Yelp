@@ -11,6 +11,7 @@
 #import "FilterCell.h"
 #import "FilterSwitch.h"
 #import "Utils.h"
+#import "MSCellAccessory.h"
 
 @interface FiltersViewController ()
 
@@ -141,7 +142,8 @@
             NSString *selectedFilterValue = self.selectedFilters[selectedRowKey];
             if (isCollapsed) {
                 cell.labelCell.text = [self findElementNameIn:groupData havingValue:selectedFilterValue type:@"string"];
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_UNFOLD_INDICATOR color:[UIColor colorWithRed:0/255.0 green:123/255.0 blue:170/255.0 alpha:1.0]];
             } else {
                 if ([selectedFilterValue isEqualToString:element[@"value"]]) {
                     cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -153,7 +155,8 @@
             int selectedFilterValue = [self.selectedFilters[selectedRowKey] intValue];
             if (isCollapsed) {
                 cell.labelCell.text = [self findElementNameIn:groupData havingValue:[NSNumber numberWithInt:selectedFilterValue] type:@"number"];
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_UNFOLD_INDICATOR color:[UIColor colorWithRed:0/255.0 green:123/255.0 blue:170/255.0 alpha:1.0]];
             } else {
                 if (selectedFilterValue == [element[@"value"] intValue]) {
                     cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -214,7 +217,6 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *filterGroup = self.filters.filterGroups[indexPath.section];
     NSString *groupOption = filterGroup[@"options"];

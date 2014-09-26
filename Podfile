@@ -4,3 +4,4 @@ pod 'AFNetworking'
 pod 'BDBOAuth1Manager'
 pod 'Colours'
 pod 'SVProgressHUD', :head
+pod 'MSCellAccessory'

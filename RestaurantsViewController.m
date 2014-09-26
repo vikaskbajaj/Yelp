@@ -62,6 +62,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     return self;
 }
 
+
 -(void) didReceiveFilters:(NSDictionary *)searchFilters {
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -113,6 +114,10 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [self.tableView reloadData];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.searchDisplayController.searchBar resignFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
@@ -152,6 +157,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     self.term = searchBar.text;
     [self.yelpResponse removeAllObjects];
+    [self.searchDisplayController.searchBar resignFirstResponder];
     [self getBusinessesForSearchTerm:self.term withFilters:[self.filters getLastSavedFilters]];
 }
 

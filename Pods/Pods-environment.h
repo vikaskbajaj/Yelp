@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_Colours 5
 #define COCOAPODS_VERSION_PATCH_Colours 0
 
+// MSCellAccessory
+#define COCOAPODS_POD_AVAILABLE_MSCellAccessory
+#define COCOAPODS_VERSION_MAJOR_MSCellAccessory 1
+#define COCOAPODS_VERSION_MINOR_MSCellAccessory 1
+#define COCOAPODS_VERSION_PATCH_MSCellAccessory 2
+
 // SVProgressHUD
 #define COCOAPODS_POD_AVAILABLE_SVProgressHUD
 #define COCOAPODS_VERSION_MAJOR_SVProgressHUD 1
